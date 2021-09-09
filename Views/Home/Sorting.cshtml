@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Numbers sorting";
+}
+@model SortingApp.Models.NumbersLineModel
+<h2>Numbers sorting</h2>
+
+<form asp-controller="HomeController" method="post">
+    Enter numbers line : <input name="Text1" type="text" /> <br /><br />
+    <input type="submit" value="Sort numbers …" formaction="SortNumbers" />
+    <input type="submit" value="Get latest sorting result …" formaction="GetFromFile" />
+    <input type="submit" value="Delete file …" formaction="DeleteFile" />
+    <input type="hidden" name="Filepath" value="@ViewBag.Filename" />
+</form>
+
+
+<strong>Initial line : </strong> @ViewBag.Line
+<br />
+<strong>Bubble sorted line : </strong> @ViewBag.BubbleLine
+<br />
+<strong>Bubble sorting time : </strong> @ViewBag.Btime
+<br />
+<strong>Selection sorted line : </strong> @ViewBag.SelectionLine
+<br />
+<strong>Selection sorting time : </strong> @ViewBag.Atime
+<br />
+<strong>Created result file: </strong> @ViewBag.Filename
+<br />
+<style ="color:red;>@ViewBag.Message</style>
+
+<br />
